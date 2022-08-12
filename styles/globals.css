@@ -1,26 +1,48 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&family=Source+Sans+Pro:wght@200&display=swap');
 
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.btn {
+    text-transform: uppercase;
+    cursor: pointer;
+    background: white;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.25) 50%, rgba(13, 141, 50, 0.25) 50%) right;
+    background-size: 200%;
+    transition: all 0.25s ease-out;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-position: left;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url("./images/galaxy.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
 }
