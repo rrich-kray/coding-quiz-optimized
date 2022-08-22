@@ -19,7 +19,7 @@ const Home = () => {
     "/winter.png",
     "/jellyfish.jpg",
     "/leaves.jpg",
-    "leaves2.jpg",
+    "/leaves2.jpg",
   ];
   const [currentBgIndex, setBgIndex] = useState(0);
 

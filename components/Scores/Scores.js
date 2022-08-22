@@ -3,10 +3,17 @@ import { CSSTransition } from "react-transition-group";
 
 const Scores = ({ changeActivePage }) => {
   const [inProp, setInProp] = useState(false);
+  const [scores, setScores] = useState([]);
+
+  useEffect(() => {
+    if (localStorage.getItem("quiz-scores")) {
+      setScores(JSON.parse(localStorage.getItem("quiz-scores")));
+    }
+  }, []);
 
   useEffect(() => {
     setInProp(true);
-  });
+  }, []);
 
   return (
     <>
@@ -20,25 +27,26 @@ const Scores = ({ changeActivePage }) => {
           <table>
             <thead>
               <tr>
-                <th>Username</th>
-                <th>Score</th>
+                <th className="username-header">Username</th>
+                <th className="score-header">Score</th>
               </tr>
             </thead>
             <tbody>
-              {JSON.parse(localStorage.getItem("scores")).map((score) => (
-                <tr key={score[0]}>
-                  <td className="username" key={score[0]}>
-                    {score[0]}
-                  </td>
-                  <td className="user-score" key={score[0]}>
-                    {score[1]}
-                  </td>
-                </tr>
-              ))}
+              {scores &&
+                scores.map((score) => (
+                  <tr key={score[0]} className="score-entry">
+                    <td className="username" key={score[0]}>
+                      {score[0]}
+                    </td>
+                    <td className="user-score" key={score[0]}>
+                      {score[1]}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
           <button
-            className="exit-btn"
+            className="exit-btn btn"
             onClick={() => changeActivePage("landing")}
           >
             Exit
@@ -49,32 +57,35 @@ const Scores = ({ changeActivePage }) => {
         .scores-list {
           display: flex;
           flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 250px;
         }
 
-        .user-info {
+        .scores-list table {
           width: 100%;
+          text-align: center;
         }
 
         .exit-btn {
-          padding: 5px;
           height: 50px;
           width: 100px;
-          border-radius: 8px;
-          background: none;
-          margin-top: 20px;
-          transition: 0.25s;
+          /* border-radius: 12px; */
+          margin: 20px;
+          font-size: 1rem;
+          font-weight: bold;
+          color: white;
         }
 
-        .exit-btn:hover {
-          cursor: pointer;
-          color: #266784;
-          background: #2196f3;
-          box-shadow: 0 0 41px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+        .username-header,
+        .score-header {
+          font-size: 1.5rem;
         }
 
         .username,
         .user-score {
           margin: 10px;
+          font-weight: bold;
         }
 
         .scores-transitions-enter {
