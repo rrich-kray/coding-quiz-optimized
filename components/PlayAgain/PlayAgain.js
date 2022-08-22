@@ -35,7 +35,14 @@ const PlayAgain = ({
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          padding: 20px;
+          padding: 30px;
+          backdrop-filter: blur(12px);
+          border-radius: 5px;
+          border: 1px solid black;
+        }
+
+        .option-container h2 {
+          color: white;
         }
 
         .options {
@@ -51,6 +58,8 @@ const PlayAgain = ({
           background: none;
           border-radius: 12px;
           transition: 0.25s;
+          font-weight: bold;
+          color: white;
         }
 
         .option-btn:hover {

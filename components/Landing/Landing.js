@@ -55,10 +55,13 @@ const Landing = ({
         }
 
         .start-btn {
-          height: 75px;
-          width: 200px;
+          height: 100px;
+          width: 250px;
           /* border-radius: 12px; */
           margin: 20px;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: white;
         }
 
         .view-scores-btn {
@@ -66,6 +69,8 @@ const Landing = ({
           /* border-radius: 8px; */
           padding: 10px;
           font-size: 10px;
+          color: white;
+          font-weight: bold;
         }
 
         .change-bg-btn {
@@ -74,6 +79,8 @@ const Landing = ({
           padding: 10px;
           font-size: 10px;
           margin-left: 5px;
+          font-weight: bold;
+          color: white;
         }
 
         .example-enter {

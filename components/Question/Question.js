@@ -88,6 +88,10 @@ const Question = ({
           border: 1px solid black;
         }
 
+        .question-container h1 {
+          color: white;
+        }
+
         .question {
           margin: 10px 10px;
         }
@@ -104,8 +108,10 @@ const Question = ({
           background: none;
           width: 100%;
           transition: 0.25s;
-          border-radius: 12px;
+          border-radius: 5px;
           height: 30px;
+          border: 1px solid black;
+          color: white;
         }
 
         .answers-container button:hover {

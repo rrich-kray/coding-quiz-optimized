@@ -45,7 +45,7 @@ const Prompt = ({ currentScore, changeActivePage }) => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          padding: 20px;
+          padding: 30px;
           backdrop-filter: blur(10px);
           border: 1px solid black;
           border-radius: 5px;
@@ -53,11 +53,16 @@ const Prompt = ({ currentScore, changeActivePage }) => {
 
         .prompt label {
           margin: 10px 10px;
+          color: white;
+          font-size: 1.5rem;
         }
 
         .prompt input {
           border: none;
           border-bottom: 1px solid black;
+          border-radius: 5px;
+          padding: 5px;
+          width: 75%;
         }
 
         .prompt input:focus {
@@ -68,10 +73,11 @@ const Prompt = ({ currentScore, changeActivePage }) => {
           margin: 10px 10px;
           background: none;
           padding: 5px;
-          border: 0.5px solid black;
-          border-radius: 12px;
+          border: 1px solid black;
+          border-radius: 5px;
           cursor: pointer;
           transition: 0.25s;
+          color: white;
         }
 
         .prompt button:hover {
